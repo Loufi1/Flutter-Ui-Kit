@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uikit/widgets/uikit-card.dart';
+import 'package:uikit/widgets/uikit-toolbar.dart';
+import 'package:uikit/widgets/uitkit-clock.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,55 +11,17 @@ class MyApp extends StatelessWidget {
       title: 'UiKit',
       home: Scaffold(
         backgroundColor: Colors.blueGrey[900],
-        bottomNavigationBar: Padding(
-          padding: EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              UikitCard(
-                width: 75,
-                height: 75,
-                borderRadius: 20.0,
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.pink,
-                  size: 34.0,
-                ),
-              ),
-              UikitCard(
-                width: 75,
-                height: 75,
-                borderRadius: 20.0,
-                child: Icon(
-                  Icons.airplanemode_active,
-                  color: Colors.blue[600],
-                  size: 34.0,
-                ),
-              ),
-              UikitCard(
-                width: 75,
-                height: 75,
-                borderRadius: 20.0,
-                child: Icon(
-                  Icons.alarm,
-                  color: Colors.grey[900],
-                  size: 34.0,
-                ),
-              ),
-              UikitCard(
-                width: 75,
-                height: 75,
-                borderRadius: 20.0,
-                child: Icon(
-                  Icons.battery_full,
-                  color: Colors.green[500],
-                  size: 34.0,
-                ),
-              )
-            ],
-          ),
-        )
+        bottomNavigationBar: UikitToolbar(),
+        appBar: AppBar(
+          title: Text('Uikit'),
+          backgroundColor: Colors.blueGrey[900],
         ),
+        body: SafeArea(
+          child: Center(
+            child: UikitClock(),
+          ),
+        ),
+      ),
     );
   }
 }
