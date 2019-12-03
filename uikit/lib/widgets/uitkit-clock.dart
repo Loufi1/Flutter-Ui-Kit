@@ -25,7 +25,7 @@ class UikitClock extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           new BoxShadow(
-            color: Colors.white,
+            color: Colors.blueGrey[500],
             blurRadius: 100.0,
           ),
         ]

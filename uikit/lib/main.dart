@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uikit/widgets/uikit-toolbar.dart';
 import 'package:uikit/widgets/uitkit-clock.dart';
+import 'package:uikit/widgets/uitkit-digital-clock.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         body: SafeArea(
           child: Center(
-            child: UikitClock(),
+            child: UitKitDigitalClock(),
           ),
         ),
       ),
