@@ -53,6 +53,13 @@ class _UitKitDigitalClockState extends State<UitKitDigitalClock> {
   });
 
   @override
+  void setState(fn) {
+    if(mounted){
+      super.setState(fn);
+    }
+  }
+
+  @override
   void initState() {
     _timeString = _formatDateTime(DateTime.now());
     Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());

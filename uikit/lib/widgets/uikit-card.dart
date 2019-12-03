@@ -3,21 +3,12 @@ import 'package:flutter/material.dart';
 
 class UikitCard extends StatelessWidget {
 
-  // SIZE
   final double width;
   final double height;
-
-  // BACKGROUND
   final Color color;
-
-  // SHADOW
   final Color shadowColor;
   final double blurRadius;
-
-  // SHAPE
   final borderRadius;
-
-  // CONTENT
   final Widget child;
 
   UikitCard({
@@ -40,13 +31,11 @@ class UikitCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
         ),
-        child: Center(
-            child: child,
-        ),
+        child: child,
       ),
       decoration: new BoxDecoration(boxShadow: [
         new BoxShadow(
-          color: shadowColor,
+          color: blurRadius != 0 ? shadowColor: Colors.transparent,
           blurRadius: blurRadius,
         ),
       ]),
