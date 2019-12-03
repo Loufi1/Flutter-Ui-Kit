@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Uikit'),
           backgroundColor: Colors.blueGrey[900],
+          elevation: 200.0,
         ),
         body: SafeArea(
           child: Center(

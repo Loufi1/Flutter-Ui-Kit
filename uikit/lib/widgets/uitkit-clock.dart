@@ -19,10 +19,16 @@ class UikitClock extends StatelessWidget {
       datetime: DateTime(2019, 1, 1, 9, 12, 15),
       decoration: BoxDecoration(
         border: Border.all(
-            width: 2.0, color: Colors.white
+            width: 2.0, color: Colors.blueGrey[800],
         ),
-        color: Colors.transparent,
+        color: Colors.blueGrey[800],
         shape: BoxShape.circle,
+        boxShadow: [
+          new BoxShadow(
+            color: Colors.white,
+            blurRadius: 100.0,
+          ),
+        ]
       ),
     );
   }
