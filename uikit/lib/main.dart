@@ -10,6 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: CustomScroll(),
+          child: child,
+        );
+      },
       title: 'UiKit',
       home: Scaffold(
         backgroundColor: Colors.blueGrey[900],
@@ -33,7 +39,19 @@ class MyApp extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                 ),
                 Center(
-                  child: UikitAlarmCard(),
+                  child: Container(
+                    height: 350,
+                    width: 330,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        UikitAlarmCard(),
+                        UikitAlarmCard(alarmName: 'Tepitek'),
+                        UikitAlarmCard(alarmName: 'Code review',),
+                        UikitAlarmCard(alarmName: 'Go buy a gift for me',),
+                      ],
+                    ),
+                  )
                 ),
               ],
             )
@@ -41,5 +59,13 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class CustomScroll extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }

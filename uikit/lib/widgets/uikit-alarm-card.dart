@@ -4,6 +4,22 @@ import 'package:uikit/widgets/uikit-card.dart';
 
 class UikitAlarmCard extends StatelessWidget {
 
+  final String alarmName;
+  final String from;
+  final String to;
+  final String transport;
+  final String departureHour;
+  final String arrivedHour;
+
+  UikitAlarmCard({
+    this.alarmName = 'Default',
+    this.from = '42 Uikit Street, New-York',
+    this.to = '127.0.0.1:8080',
+    this.transport = 'metro',
+    this.departureHour = '23h42',
+    this.arrivedHour = '00h42',
+  });
+
   @override
   Widget build(BuildContext context) {
     return UikitCard(
@@ -24,7 +40,7 @@ class UikitAlarmCard extends StatelessWidget {
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
-                    'My alarm',
+                    this.alarmName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -41,14 +57,14 @@ class UikitAlarmCard extends StatelessWidget {
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
-                    '12 Rue de la poutre, Paris',
+                    this.from,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Spacer(flex: 1),
                   Text(
-                    '12h43',
+                    this.departureHour,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -59,20 +75,20 @@ class UikitAlarmCard extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Icon(
-                    Icons.home,
+                    Icons.location_on,
                     color: Colors.blue,
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
-                    '14 Rue de la flemme, Paris',
+                    this.to,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Spacer(flex: 1),
                   Text(
-                    '13h20',
+                    this.arrivedHour,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -83,13 +99,13 @@ class UikitAlarmCard extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Icon(
-                    Icons.airplanemode_active,
+                    Icons.directions_car,
                     color: Colors.pinkAccent,
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
-                    'Métro -> bus -> marche',
+                    this.transport,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -99,7 +115,7 @@ class UikitAlarmCard extends StatelessWidget {
               Padding(padding: EdgeInsets.only(top: 40)),
               Center(
                 child: Text(
-                  '12h43',
+                  this.departureHour,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 50,
