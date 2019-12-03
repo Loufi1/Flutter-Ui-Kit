@@ -3,15 +3,54 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 
 class UitKitDigitalClock extends StatefulWidget {
-  UitKitDigitalClock({Key key}) : super(key: key);
+
+  final double timeSize;
+  final double dateSize;
+  final Color color;
+  final Color shadowColor;
+  final double blurRadius;
+  final bool date;
+
+  UitKitDigitalClock({
+    Key key,
+    this.timeSize = 25,
+    this.dateSize = 20,
+    this.color = Colors.white,
+    this.shadowColor = Colors.white,
+    this.blurRadius = 15.0,
+    this.date = false,
+  }) : super(key: key);
 
   @override
-  _UitKitDigitalClockState createState() => _UitKitDigitalClockState();
+  _UitKitDigitalClockState createState() => _UitKitDigitalClockState(
+    timeSize: this.timeSize,
+    dateSize: this.dateSize,
+    color: this.color,
+    shadowColor: this.shadowColor,
+    blurRadius: this.blurRadius,
+    date: this.date,
+  );
 }
 
 class _UitKitDigitalClockState extends State<UitKitDigitalClock> {
-  String _timeString;
-  String _date;
+  String _timeString = '';
+  String _date = '';
+
+  final double timeSize;
+  final double dateSize;
+  final Color color;
+  final Color shadowColor;
+  final double blurRadius;
+  final bool date;
+
+  _UitKitDigitalClockState({
+    this.timeSize = 25,
+    this.dateSize = 20,
+    this.color = Colors.white,
+    this.shadowColor = Colors.white,
+    this.blurRadius = 15.0,
+    this.date = false,
+  });
 
   @override
   void initState() {
@@ -29,30 +68,31 @@ class _UitKitDigitalClockState extends State<UitKitDigitalClock> {
             _timeString,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 25,
+              color: color,
+              fontSize: this.timeSize,
               shadows: [
                 BoxShadow(
-                  color: Colors.white,
-                  blurRadius: 15.0,
+                  color: this.shadowColor,
+                  blurRadius: this.blurRadius,
                 ),
               ],
             ),
           ),
+          this.date ?
           Text(
             _date,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 10,
+              color: color,
+              fontSize: this.dateSize,
               shadows: [
                 BoxShadow(
-                  color: Colors.blueGrey,
-                  blurRadius: 15.0,
+                  color: this.shadowColor,
+                  blurRadius: this.blurRadius,
                 ),
               ],
             ),
-          ),
+          ) : Text('')
         ],
       ),
     );
