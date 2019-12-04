@@ -1,4 +1,4 @@
-#Tue Dec 03 22:55:19 CET 2019
+#Wed Dec 04 10:38:53 CET 2019
 base.0=/home/loufi/tek3/Flutter-Ui-Kit/uikit/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

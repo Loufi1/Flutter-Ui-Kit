@@ -24,7 +24,7 @@ class UikitAlarmCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return UikitCard(
       width: 320,
-      height: 350,
+      height: 400,
       borderRadius: 20.0,
       blurRadius: 0,
       child: Padding(
@@ -44,6 +44,14 @@ class UikitAlarmCard extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  Spacer(flex: 1),
+                  Switch(
+                    onChanged: (bool value) {
+
+                    },
+                    value: true,
+                    activeColor: Colors.blueGrey,
                   ),
                 ],
               ),
@@ -112,7 +120,7 @@ class UikitAlarmCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.only(top: 40)),
+              Padding(padding: EdgeInsets.only(top: 50)),
               Center(
                 child: Text(
                   this.departureHour,

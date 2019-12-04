@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uikit/widgets/uikit-toolbar.dart';
 import 'package:uikit/widgets/uitkit-digital-clock.dart';
 import 'package:uikit/widgets/uikit-alarm-card.dart';
+import 'dart:math' as math;
 
 void main() => runApp(MyApp());
 
@@ -20,11 +21,6 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.blueGrey[900],
         bottomNavigationBar: UikitToolbar(),
-        appBar: AppBar(
-          title: Text('Uikit'),
-          backgroundColor: Colors.blueGrey[900],
-          elevation: 200.0,
-        ),
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.only(top: 40),
@@ -40,7 +36,7 @@ class MyApp extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    height: 350,
+                    height: 400,
                     width: 330,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
