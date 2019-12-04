@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uikit/widgets/uikit-input.dart';
 import 'package:uikit/widgets/uikit-toolbar.dart';
 import 'package:uikit/widgets/uitkit-digital-clock.dart';
 import 'package:uikit/widgets/uikit-alarm-card.dart';
@@ -43,8 +44,20 @@ class MyApp extends StatelessWidget {
                       children: <Widget>[
                         UikitAlarmCard(),
                         UikitAlarmCard(alarmName: 'Tepitek'),
-                        UikitAlarmCard(alarmName: 'Code review',),
-                        UikitAlarmCard(alarmName: 'Go buy a gift for me',),
+                        UikitAlarmCard(alarmName: 'Code review'),
+                        UikitAlarmCard(alarmName: 'Go buy a gift for me'),
+                        Container(
+                          width: 350,
+                          height: 100,
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Column(
+                              children: <Widget>[
+                                UikitInput(),
+                              ],
+                            )
+                          )
+                        )
                       ],
                     ),
                   )
