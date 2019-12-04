@@ -27,6 +27,7 @@ class UikitAlarmCard extends StatelessWidget {
       height: 400,
       borderRadius: 20.0,
       blurRadius: 0,
+      color: Colors.blueGrey[800],
       child: Padding(
           padding: EdgeInsets.all(10),
           child: Column(
@@ -35,7 +36,7 @@ class UikitAlarmCard extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.alarm,
-                    color: Colors.black,
+                    color: Colors.white,
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
@@ -43,6 +44,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.alarmName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   Spacer(flex: 1),
@@ -60,7 +62,7 @@ class UikitAlarmCard extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.home,
-                    color: Colors.green,
+                    color: Colors.blueGrey[100],
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
@@ -68,6 +70,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.from,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   Spacer(flex: 1),
@@ -75,6 +78,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.departureHour,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -84,7 +88,7 @@ class UikitAlarmCard extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.location_on,
-                    color: Colors.blue,
+                    color: Colors.blueGrey[100],
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
@@ -92,6 +96,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.to,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   Spacer(flex: 1),
@@ -99,6 +104,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.arrivedHour,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -108,7 +114,7 @@ class UikitAlarmCard extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.directions_car,
-                    color: Colors.pinkAccent,
+                    color: Colors.blueGrey[100],
                     size: 34.0,
                   ),
                   Padding(padding: EdgeInsets.only(left: 5)),
@@ -116,6 +122,7 @@ class UikitAlarmCard extends StatelessWidget {
                     this.transport,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -127,6 +134,7 @@ class UikitAlarmCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 50,
+                    color: Colors.white,
                   ),
                 ),
               ),

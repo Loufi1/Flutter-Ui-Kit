@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:uikit/widgets/uikit-toolbar.dart';
 import 'package:uikit/widgets/uitkit-digital-clock.dart';
 import 'package:uikit/widgets/uikit-alarm-card.dart';
-import 'dart:math' as math;
 
 void main() => runApp(MyApp());
 
@@ -29,6 +28,7 @@ class MyApp extends StatelessWidget {
                 Center(
                   child: UitKitDigitalClock(
                     timeSize: 50,
+                    blurRadius: 10,
                   ),
                 ),
                 Padding(
