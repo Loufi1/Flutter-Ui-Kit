@@ -53,7 +53,10 @@ class MyApp extends StatelessWidget {
                             padding: EdgeInsets.all(20),
                             child: Column(
                               children: <Widget>[
-                                UikitInput(),
+                                UikitInput(
+                                  icon: Icon(Icons.person, color: Colors.white),
+                                  label: 'Username',
+                                ),
                               ],
                             )
                           )

@@ -2,26 +2,41 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UikitInput extends StatelessWidget {
+
+  final Color textColor;
+  final Icon icon;
+  final bool filled;
+  final Color fillColor;
+  final String label;
+
+  UikitInput({
+    this.textColor = Colors.white,
+    this.filled = true,
+    this.fillColor = Colors.blueGrey,
+    this.label = '',
+    this.icon = null,
+  });
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: this.textColor),
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.blueGrey,
+        fillColor: this.fillColor,
         labelStyle: TextStyle(
-          color: Colors.white,
+          color: this.textColor,
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.white,
+            color: this.textColor,
           ),
         ),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: this.textColor),
         ),
-        labelText: 'Username',
-        prefixIcon: const Icon(Icons.person, color: Colors.white),
+        labelText: this.label,
+        prefixIcon: this.icon != null ? this.icon: null,
         prefixText: ' ',
       ),
     );
