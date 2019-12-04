@@ -40,27 +40,38 @@ class MyApp extends StatelessWidget {
                     height: 400,
                     width: 330,
                     child: ListView(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.vertical,
                       children: <Widget>[
-                        UikitAlarmCard(),
-                        UikitAlarmCard(alarmName: 'Tepitek'),
-                        UikitAlarmCard(alarmName: 'Code review'),
-                        UikitAlarmCard(alarmName: 'Go buy a gift for me'),
-                        Container(
-                          width: 350,
-                          height: 100,
-                          child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Column(
-                              children: <Widget>[
-                                UikitInput(
-                                  icon: Icon(Icons.person, color: Colors.white),
-                                  label: 'Username',
-                                ),
-                              ],
-                            )
-                          )
-                        )
+                        UikitAlarmCard(
+                          width: 320,
+                          height: 200,
+                          backgroundColor: Colors.blueGrey[800],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10),),
+                        UikitAlarmCard(
+                          width: 320,
+                          height: 200,
+                          backgroundColor: Colors.blueGrey[800],
+                          alarmName: 'TEPITEK',
+                        ),
+                        UikitAlarmCard(
+                          width: 320,
+                          height: 200,
+                          backgroundColor: Colors.blueGrey[800],
+                          alarmName: 'Ranger la maison',
+                        ),
+                        UikitAlarmCard(
+                          width: 320,
+                          height: 200,
+                          backgroundColor: Colors.blueGrey[800],
+                          alarmName: 'Call important',
+                        ),
+                        UikitAlarmCard(
+                          width: 320,
+                          height: 200,
+                          backgroundColor: Colors.blueGrey[800],
+                          alarmName: 'XXX',
+                        ),
                       ],
                     ),
                   )

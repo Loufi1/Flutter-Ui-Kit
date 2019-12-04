@@ -5,139 +5,307 @@ import 'package:uikit/widgets/uikit-card.dart';
 class UikitAlarmCard extends StatelessWidget {
 
   final String alarmName;
-  final String from;
-  final String to;
-  final String transport;
-  final String departureHour;
-  final String arrivedHour;
+  final double width;
+  final double height;
+  final Color backgroundColor;
+  final Color textColor;
 
   UikitAlarmCard({
     this.alarmName = 'Default',
-    this.from = '42 Uikit Street, New-York',
-    this.to = '127.0.0.1:8080',
-    this.transport = 'metro',
-    this.departureHour = '23h42',
-    this.arrivedHour = '00h42',
+    this.width = 320,
+    this.height = 200,
+    this.backgroundColor = Colors.white,
+    this.textColor = Colors.white,
   });
 
   @override
   Widget build(BuildContext context) {
     return UikitCard(
-      width: 320,
-      height: 400,
+      width: this.width,
+      height: this.height,
       borderRadius: 20.0,
       blurRadius: 0,
-      color: Colors.blueGrey[800],
+      color: this.backgroundColor,
       child: Padding(
           padding: EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.alarm,
-                    color: Colors.white,
-                    size: 34.0,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 5)),
-                  Text(
-                    this.alarmName,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
                       color: Colors.white,
+                      width: 3.0,
                     ),
-                  ),
-                  Spacer(flex: 1),
-                  Switch(
-                    onChanged: (bool value) {
-
-                    },
-                    value: true,
-                    activeColor: Colors.blueGrey,
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 30)),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.home,
-                    color: Colors.blueGrey[100],
-                    size: 34.0,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 5)),
-                  Text(
-                    this.from,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  )
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.alarm,
+                      color: this.textColor,
+                      size: 34.0,
                     ),
-                  ),
-                  Spacer(flex: 1),
-                  Text(
-                    this.departureHour,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    Padding(padding: EdgeInsets.only(left: 5)),
+                    Text(
+                      this.alarmName,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: this.textColor,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 10)),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.location_on,
-                    color: Colors.blueGrey[100],
-                    size: 34.0,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 5)),
-                  Text(
-                    this.to,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    Spacer(flex: 1),
+                    Switch(
+                      onChanged: (bool value) {},
+                      value: true,
+                      activeColor: Colors.blueGrey,
                     ),
-                  ),
-                  Spacer(flex: 1),
-                  Text(
-                    this.arrivedHour,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 10)),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.directions_car,
-                    color: Colors.blueGrey[100],
-                    size: 34.0,
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 5)),
-                  Text(
-                    this.transport,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 50)),
-              Center(
-                child: Text(
-                  this.departureHour,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50,
-                    color: Colors.white,
-                  ),
+                  ],
                 ),
               ),
+              Padding(padding: EdgeInsets.only(top: 10)),
+              Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+
+
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Départ:',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15
+                          ),
+                        ),
+                        Text(
+                          '8h00',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30
+                          ),
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Home',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+
+                    Spacer(flex: 1),
+
+
+                    Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                        Text(
+                          '+ 10min',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15
+                          ),
+                        ),
+                      ],
+                    ),
+
+
+                    Spacer(flex: 1),
+
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        Text(
+                          'Arrivée:',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15
+                          ),
+                        ),
+                        Text(
+                          '8h42',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30
+                          ),
+                        ),
+                        Row(
+                          children: <Widget>[
+
+                            Container (
+                              width: 100,
+                              child: Column (
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  Text(
+                                    '42 rue du loufi',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+
+
+                  ],
+                ),
+              ),
+              Padding(padding: EdgeInsets.only(top: 15)),
+              Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+
+
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'L',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'M',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'M',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'J',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'V',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'S',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                            UikitCard(
+                                width: 28,
+                                height: 28,
+                                borderRadius: 10.0,
+                                child: Center(
+                                  child: Text(
+                                    'D',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                )
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+
+
+                    Spacer(flex: 1),
+
+
+                    Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.directions_car,
+                          color: Colors.blueGrey,
+                          size: 30,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           )
       ),
