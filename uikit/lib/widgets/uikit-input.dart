@@ -3,41 +3,59 @@ import 'package:flutter/material.dart';
 
 class UikitInput extends StatelessWidget {
 
-  final Color textColor;
-  final Icon icon;
-  final bool filled;
-  final Color fillColor;
-  final String label;
+  final String fieldName;
+  final bool isSecret;
+  final Color fieldNameColor;
+  final Color inputColor;
+  final Color backgroundColor;
+  final Color hintColor;
+  final String hintText;
 
-  UikitInput({
-    this.textColor = Colors.white,
-    this.filled = true,
-    this.fillColor = Colors.blueGrey,
-    this.label = '',
-    this.icon = null,
+  const UikitInput({
+    @required this.fieldName,
+    this.isSecret = false,
+    this.fieldNameColor = Colors.grey,
+    this.inputColor = Colors.blue,
+    this.backgroundColor = Colors.blueGrey,
+    this.hintColor =  Colors.white,
+    this.hintText = 'default@area.com',
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      style: TextStyle(color: this.textColor),
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: this.fillColor,
-        labelStyle: TextStyle(
-          color: this.textColor,
+    return Container(
+      decoration: BoxDecoration(
+        color: this.backgroundColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              this.fieldName,
+              style: TextStyle(
+                color: this.fieldNameColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 11,
+              ),
+            ),
+            TextField(
+              cursorColor: Colors.black,
+              obscureText: this.isSecret ? true : false,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: this.hintText,
+                hintStyle: TextStyle(color: this.hintColor),
+              ),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: this.inputColor,
+              ),
+            ),
+          ],
         ),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: this.textColor,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: this.textColor),
-        ),
-        labelText: this.label,
-        prefixIcon: this.icon != null ? this.icon: null,
-        prefixText: ' ',
       ),
     );
   }
