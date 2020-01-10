@@ -10,7 +10,7 @@ class LoginTitle extends StatelessWidget {
             TextSpan(
               text: 'Ui',
               style: TextStyle(
-                color: Colors.blueGrey,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 50,
               ),
