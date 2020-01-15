@@ -10,9 +10,11 @@ class UikitInput extends StatelessWidget {
   final Color backgroundColor;
   final Color hintColor;
   final String hintText;
+  final TextEditingController controller;
 
-  const UikitInput({
+  UikitInput({
     @required this.fieldName,
+    this.controller,
     this.isSecret = false,
     this.fieldNameColor = Colors.grey,
     this.inputColor = Colors.blue,
@@ -42,6 +44,7 @@ class UikitInput extends StatelessWidget {
               ),
             ),
             TextField(
+              controller: this.controller,
               cursorColor: Colors.black,
               obscureText: this.isSecret ? true : false,
               decoration: InputDecoration(
