@@ -7,12 +7,19 @@ class UikitCardButton extends StatelessWidget {
   final Color buttonNameColor;
   final Color backgroundColor;
   final Function onTap;
+  final Icon icon;
+  final double height;
 
   const UikitCardButton({
     this.buttonName = 'Login',
     this.buttonNameColor = Colors.white,
     this.backgroundColor = Colors.blueGrey,
+    this.height,
     this.onTap,
+    this.icon = const Icon(
+      Icons.arrow_forward,
+      color: Colors.white,
+    ),
   });
 
   @override
@@ -20,6 +27,7 @@ class UikitCardButton extends StatelessWidget {
     return GestureDetector(
       onTap: this.onTap,
       child: Container(
+        height: this.height,
         decoration: BoxDecoration(
           color: this.backgroundColor,
           borderRadius: BorderRadius.circular(12),
@@ -37,10 +45,7 @@ class UikitCardButton extends StatelessWidget {
                   ),
                 ),
                 Spacer(flex: 1),
-                Icon(
-                  Icons.arrow_forward,
-                  color: Colors.white,
-                )
+                this.icon,
               ],
             )
         ),
