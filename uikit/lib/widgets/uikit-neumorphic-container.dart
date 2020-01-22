@@ -8,6 +8,7 @@ class UikitNeumorphicContainer extends StatefulWidget {
   final Color leftShadowColor;
   final Color rightShadowColor;
   final Color innerShadowColor;
+  final Color rightInnerShadowColor;
   final double radius;
   final double padding;
 
@@ -18,6 +19,7 @@ class UikitNeumorphicContainer extends StatefulWidget {
     this.leftShadowColor = Colors.white,
     this.rightShadowColor = Colors.grey,
     this.innerShadowColor = Colors.grey,
+    this.rightInnerShadowColor = Colors.grey,
     this.radius = 3,
     this.padding = 20,
   }) : this.blur = Offset(bevel / 2, bevel / 2);
@@ -59,7 +61,7 @@ class _UikitNeumorphicContainerState extends State<UikitNeumorphicContainer> {
                 isPressed ? color : color.mix(this.widget.innerShadowColor, 0.1),
                 isPressed ? color.mix(this.widget.innerShadowColor, 0.05) : color,
                 isPressed ? color.mix(this.widget.innerShadowColor, 0.05) : color,
-                color.mix(Colors.white, isPressed ? 0.2 : 0.5),
+                color.mix(this.widget.rightInnerShadowColor, isPressed ? 0.2 : 0.5),
               ],
               stops: [0.0, 0.3, 0.6, 1.0,]),
           boxShadow: isPressed ? null : [

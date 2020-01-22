@@ -5,7 +5,7 @@ class UikitPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
-    paint.color = Colors.blueGrey;
+    paint.color = Colors.grey[900];
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 5.0;
 

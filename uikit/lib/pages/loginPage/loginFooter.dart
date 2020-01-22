@@ -18,7 +18,7 @@ class LoginFooter extends StatelessWidget {
           child: Text(
             'Forgot password ?',
             style: TextStyle(
-              color: Colors.blueGrey,
+              color: Colors.blueGrey[200],
               fontWeight: FontWeight.bold,
               fontSize: 15,
             ),
@@ -35,7 +35,7 @@ class LoginFooter extends StatelessWidget {
           child: Text(
             'Create account',
             style: TextStyle(
-              color: Colors.blueGrey,
+              color: Colors.blueGrey[200],
               fontWeight: FontWeight.bold,
               fontSize: 15,
             ),
