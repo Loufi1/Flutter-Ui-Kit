@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:uikit/pages/loginPage/loginTitle.dart';
 import 'package:uikit/pages/loginPage/loginForm.dart';
 import 'package:uikit/pages/loginPage/loginFooter.dart';
 import 'package:uikit/services/colorConverter.dart';
@@ -9,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor("E0E5EC"),
+      backgroundColor: HexColor("17223B"),
       body: Stack(
         children: <Widget>[
           SingleChildScrollView(
@@ -21,7 +20,7 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       Spacer(flex: 1,),
-                      LoginTitle(),
+                      Image.asset("./assets/cerf.png", width: 150, height: 150,),
                       Spacer(flex: 1),
                       LoginForm(),
                       Spacer(flex: 1),

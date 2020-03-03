@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uikit/pages/createAccount/createAccount.dart';
-import 'package:uikit/pages/forgotPassword/forgotPassword.dart';
 
 class LoginFooter extends StatelessWidget {
   @override
@@ -9,16 +8,11 @@ class LoginFooter extends StatelessWidget {
     return Row(
       children: <Widget>[
         GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
-            );
-          },
+          onTap: () {},
           child: Text(
             'Forgot password ?',
             style: TextStyle(
-              color: Colors.blueGrey[200],
+              color: Colors.blueGrey[100],
               fontWeight: FontWeight.bold,
               fontSize: 15,
             ),
@@ -35,7 +29,7 @@ class LoginFooter extends StatelessWidget {
           child: Text(
             'Create account',
             style: TextStyle(
-              color: Colors.blueGrey[200],
+              color: Colors.blueGrey[100],
               fontWeight: FontWeight.bold,
               fontSize: 15,
             ),
